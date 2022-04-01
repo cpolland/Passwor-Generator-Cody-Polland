@@ -12,12 +12,14 @@ var symbols = ["!","@","#","$","%","&","*","?",]
 
 var generateBtn = document.querySelector("#generate");
 
-
+function getPrompt(){
 var length = prompt("How many characters would you like you password to be? must be greater than 8 characters")
+  decsion = [];
 
-if (isNaN(length)) || length < 8 || length > 128){
+if (isNaN(length) || length < 8 || length > 128){
   alert("must be greater than 8 character and no longer than 128.");
-  
+  return false;
+}
   if (confirm("Upper Case characters?")){
     decsion = decsion.concat(uppercase)
   }
@@ -32,19 +34,24 @@ if (isNaN(length)) || length < 8 || length > 128){
   if (confirm("Any symbols?")){
     decsion = decsion.concat(symbols)
   }
+  return true;
 }
 
 
 
+
 function generatePassword() {
-  var password = "password";
-  var length = prompt("How many characters would you like you password to be? must be greater than 8 characters")
+  var password = "";
+  for(var i = 0; i < length; i++){
+    var randomPassword = math.floor(math.random() * decsion.length);
+    password = password + decsion[randomPassword];
+  }
 
 
   
   // TODO: add code to generate the password here
 
-  return password;
+return password;
 }
 
 // Write password to the #password input
@@ -52,13 +59,13 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+ 
   if (password) {
-    var radomPassword = generatePassword();
+    var randomPassword = generatePassword();
     passwordText.value = randomPassword;}
 
   else {
-    passwordNew.value = '';
+    passwordText.value = '';
   }
   }
 
