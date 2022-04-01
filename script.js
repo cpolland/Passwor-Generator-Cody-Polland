@@ -2,7 +2,7 @@
 var characterLength = 8;
 var decsion = [];
 
-var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"];
+var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","x","y","Z"];
 var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q",];
 var numbers = ["1","2","3","4","5","6","7","8","9",];
 var symbols = ["!","@","#","$","%","&","*","?",]
@@ -12,11 +12,11 @@ var symbols = ["!","@","#","$","%","&","*","?",]
 
 var generateBtn = document.querySelector("#generate");
 
-function getPrompt(){
+function generatePassword(){
 var length = prompt("How many characters would you like you password to be? must be greater than 8 characters")
   decsion = [];
 
-if (isNaN(length) || length < 8 || length > 128){
+if (isNaN(length) || length < 8 || characterLength > 128){
   alert("must be greater than 8 character and no longer than 128.");
   return false;
 }
@@ -42,7 +42,7 @@ if (isNaN(length) || length < 8 || length > 128){
 
 function generatePassword() {
   var password = "";
-  for(var i = 0; i < length; i++){
+  for(var i = 0; i < characterLength; i++){
     var randomPassword = math.floor(math.random() * decsion.length);
     password = password + decsion[randomPassword];
   }
@@ -57,15 +57,15 @@ return password;
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordNew = document.querySelector("#password");
 
  
   if (password) {
     var randomPassword = generatePassword();
-    passwordText.value = randomPassword;}
+    passwordNew.value = randomPassword;}
 
   else {
-    passwordText.value = '';
+    passwordNew.value = '';
   }
   }
 
