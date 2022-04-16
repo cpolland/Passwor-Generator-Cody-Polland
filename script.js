@@ -1,73 +1,107 @@
-// Assignment Code
-var characterLength = 8;
-var decsion = [];
+var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V','W','X','Y','Z',];
+var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',];
+var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var special = ["!","@","#","$","%","^","&","*","(",")"];
 
-var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","x","y","Z"];
-var lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q",];
-var numbers = ["1","2","3","4","5","6","7","8","9",];
-var symbols = ["!","@","#","$","%","&","*","?",]
+var generateBtn = document.querySelector('#generate');
 
-
+generateBtn.addEventListener('click', writePassword);
 
 
-var generateBtn = document.querySelector("#generate");
+function randomizer(arr) {
+  var randIndex = Math.floor(Math.random() * arr.length);
+  var randElement = arr[randIndex];
 
-function generatePassword(){
-var length = prompt("How many characters would you like you password to be? must be greater than 8 characters")
-  decsion = [];
-
-if (isNaN(length) || length < 8 || characterLength > 128){
-  alert("must be greater than 8 character and no longer than 128.");
-  return false;
-}
-  if (confirm("Upper Case characters?")){
-    decsion = decsion.concat(uppercase)
-  }
-
-  if (confirm("Lower case characters?")){
-    decsion = decsion.concat(lowercase)
-  }
-  
-  if (confirm("Any numbers?")){
-    decsion = decsion.concat(numbers)
-  }
-  if (confirm("Any symbols?")){
-    decsion = decsion.concat(symbols)
-  }
-  return true;
+  return randElement;
 }
 
 
+function createPassword() {
+  var choices = passWordCriteria();
+  var outcomes = [];
+  var potentialCharacters = [];
+  var definateCharacters = [];
+  if (!choices) return null;
 
-
-function generatePassword() {
-  var password = "";
-  for(var i = 0; i < characterLength; i++){
-    var randomPassword = math.floor(math.random() * decsion.length);
-    password = password + decsion[randomPassword];
+  if (choices.needSpecialCharacters) {
+    potentialCharacters = potentialCharacters.concat(special);
+    definateCharacters.push(randomizer(special));
+  }if (choices.hasNumbers) {
+    potentialCharacters = potentialCharacters.concat(numbers);
+    definateCharacters.push(randomizer(numbers));
+  }
+  if (choices.needLowercaseCharacters) {
+    potentialCharacters = potentialCharacters.concat(lowerCase);
+    definateCharacters.push(randomizer(lowerCase));
+  } if (choices.needUppercaseCharacters) {
+    potentialCharacters = potentialCharacters.concat(upperCase);
+    definateCharacters.push(randomizer(upperCase));
   }
 
+  for (var i = 0; i < choices.length; i++) {
+    var possibleCharacter = randomizer(potentialCharacters);
 
-  
-  // TODO: add code to generate the password here
+    outcomes.push(possibleCharacter);
+  }
 
-return password;
+  for (var i = 0; i < definateCharacters.length; i++) {
+    outcomes[i] = definateCharacters[i];
+  }
+  return outcomes.join('');
 }
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordNew = document.querySelector("#password");
+function passWordCriteria() {
+  var passWordCriteriaLength = parseInt(
+    prompt('How long would you like your password to be?'),
+  );
+  if (Number.isNaN(passWordCriteriaLength)) {
+    alert('Please choose a number between 1 and 8');
+    return null;
+  }
+  if (passWordCriteriaLength < 8) {
+    alert('Password length must be at least 8 characters');
+    return null;
+  }
+  var needSpecialCharacters = confirm(
+    'Add special Characters?'
+  );
+  var hasNumbers = confirm(
+    'Add Numbers.'
+  );
+  var needLowercaseCharacters = confirm(
+    'Add lowercase Characters.'
+  );
+  var needUppercaseCharacters = confirm(
+    'Add uppercase characters.'
+  );
+  if (
+    needSpecialCharacters === false &&
+    hasNumbers === false &&
+    needLowercaseCharacters === false &&
+    needUppercaseCharacters === false
+  ) {
+    alert('please pick on type');
+    return null;
+  }
 
  
-  if (password) {
-    var randomPassword = generatePassword();
-    passwordNew.value = randomPassword;}
+  var passwordObject = {
+    length: length,
+    needSpecialCharacters: needSpecialCharacters,
+    hasNumbers: hasNumbers,
+    needLowercaseCharacters: needLowercaseCharacters,
+    needUppercaseCharacters: needUppercaseCharacters,
+  };
 
-  else {
-    passwordNew.value = '';
-  }
-  }
+  return passwordObject;
+}
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+function writePassword() {
+  var password = createPassword();
+  var passwordText = document.querySelector('#password');
+
+  passwordText.value = password;
+}
+
+
+
