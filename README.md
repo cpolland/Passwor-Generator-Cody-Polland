@@ -10,7 +10,7 @@ This project has been deployed to GitHub Pages. To get this project up and runni
 
 ## Usage
 
-![](/main/assets/images/Screen%20Shot)
+![](images/Screen Shot 2022-07-19 at 2.42.24 PM.png)
 
 ## Credits
 
