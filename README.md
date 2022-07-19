@@ -9,7 +9,7 @@ I was motivated to attempt a password generator because it seemed like a good fo
 This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template. 
 
 Github deployed IO link
-- [[GitHub Pages](https://cpolland.github.io/Passwor-Generator-Cody-Polland/)
+- [GitHub Pages](https://cpolland.github.io/Passwor-Generator-Cody-Polland/)
 
 ## Usage
 The intial landing state of the Page.
@@ -39,6 +39,6 @@ This was a solo project worked on by Cody Polland
 
 ![badmath](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)
 ![badmath](https://badges.aleen42.com/src/javascript.svg)
-![badmath](https://badges.aleen42.com/src/javascript.svg)
+
 
 
