@@ -9,29 +9,24 @@ I was motivated to attempt a password generator because it seemed like a good fo
 This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template.
 
 ## Usage
-
+The intial landing state of the Page.
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.42.24%20PM.png)
+Once you click Generate Password button you will be propted with password prefrence questions. 
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.42.37%20PM.png)
-
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.42.50%20PM.png)
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.00%20PM.png)
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.10%20PM.png)
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.20%20PM.png)
+Once all questions are answered the password will be generated from given answeres. 
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.28%20PM.png)
 
 
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+This was a solo project worked on by Cody Polland
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-If you followed tutorials, include links to those here as well.
-
-## License
-
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
 
 ---
 
@@ -39,7 +34,7 @@ The last section of a high-quality README file is the license. This lets other d
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+![badmath](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)
 
 Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
