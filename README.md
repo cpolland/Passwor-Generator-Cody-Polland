@@ -31,10 +31,6 @@ This was a solo project worked on by Cody Polland
 
 
 
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
 ## Badges
 
 ![badmath](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)
