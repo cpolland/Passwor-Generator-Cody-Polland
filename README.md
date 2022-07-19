@@ -11,6 +11,15 @@ This project has been deployed to GitHub Pages. To get this project up and runni
 ## Usage
 
 ![](assets/images/Screen%20Shot%202022-07-19%20at%202.42.24%20PM.png)
+![](assets/images/Screen%20Shot%202022-07-19%20at%202.42.37%20PM.png)
+
+![](assets/images/Screen%20Shot%202022-07-19%20at%202.42.50%20PM.png)
+![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.00%20PM.png)
+![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.10%20PM.png)
+![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.20%20PM.png)
+![](assets/images/Screen%20Shot%202022-07-19%20at%202.43.28%20PM.png)
+
+
 
 ## Credits
 
